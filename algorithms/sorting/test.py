@@ -48,7 +48,7 @@ def lexBucketSortTest():
   print(lexBucketSort(values, k, r), end="\n\n\n")
 
 
-smallArr = [4, 2, 1, 9, 7, 5]
+smallArr = [4, 2, 1, 9, 7, 5, 8, 3]
 
 print("SIMPLE TESTS\n")
 simpleTest("Select Sort", selectSort, smallArr[:])

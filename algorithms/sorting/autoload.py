@@ -7,3 +7,10 @@ def swap(arr, a, b):
   arr[b] = temp
 
   return arr
+
+
+def ifelse(cond, t, f):
+  if (cond):
+    return t
+
+  return f

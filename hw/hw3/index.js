@@ -27,7 +27,7 @@ const run = (options, target, nums, operators, history = []) => {
 
         const newNums = [...nums, val];
         const newOperators = removeFirst(operators, operator);
-        const newHistory = [...history, [exp + ' = ' + val]];
+        const newHistory = [...history, [exp + " = " + val]];
 
         if (newNums.includes(target)) {
           if (!options.hasOwnProperty(exp)) {
@@ -46,7 +46,7 @@ const run = (options, target, nums, operators, history = []) => {
 };
 
 const options = {};
-run(options, 102, [3, 11], ['+', '+', '*', '*']);
+run(options, 210, [2, 4, 5, 7], ["+", "+", "*", "*"]);
 
 Object.entries(options).forEach(([exp, combinations]) => {
   const min = combinations.reduce(
@@ -57,7 +57,16 @@ Object.entries(options).forEach(([exp, combinations]) => {
   // Remove all combinations with an arbitrary operation
   options[exp] = combinations
     .filter(item => item.length == min)
-    .map(item => item.join(' | '));
+    .map(item => item.join(" | "));
 });
 
 console.log(options);
+
+// for (let num = 200; num <= 300; num++) {
+//   const options = {};
+//   run(options, num, [2, 4, 5, 7], ["+", "+", "*", "*"]);
+
+//   if (Object.entries(options).length == 0) {
+//     console.log(num);
+//   }
+// }
